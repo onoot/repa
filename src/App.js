@@ -137,8 +137,9 @@ const App = () => {
                 <td style={getCellStyle(row.today, row.yesterday)}>{row.today}</td>
                 <td style={{ ...getCellStyle(row.yesterday, row.today), position: 'relative' }}>
                   <span style={{ position: 'absolute', left: 50 }}>{row.yesterday}</span>
-                  <span style={{ position: 'absolute', right: 10, color: getPercentageColor(row.today, row.yesterday) }}>
-                    {getPercentageSign(row.today, row.yesterday)}{Math.abs(calculatePercentage(row.today, row.yesterday))}%
+                  <span style={{ position: 'absolute', right: 10, color: !getPercentageColor(row.today, row.yesterday) }}>
+                    {getPercentageSign(row.today, row.yesterday)}
+                    {Math.abs(calculatePercentage(row.today, row.yesterday))}%
                   </span>
                 </td>
                 <td style={getCellStyle(row.yesterday, row.today)}>{row.lastWeek}</td>
